@@ -20,7 +20,7 @@ function NavBar() {
             </div>
           </div>
           <div className={styles.links}>
-            <NavLink to={'/favorites/movies'} onClick={clickLinkHandler}>
+            <NavLink to={'favorites'} onClick={clickLinkHandler}>
               <div className={styles.left_links}>
                 <HiHeart />
                 <h2>My List</h2>

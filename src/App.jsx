@@ -5,11 +5,11 @@ import Results from './components/Results/Results'
 function App() {
   return (
     <BrowserRouter>
-      <Route path="/">
+      <Route path="/MoviesApp/">
         <NavBar />
       </Route>
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/MoviesApp/" component={Home} />
       </Switch>
     </BrowserRouter>
   );
