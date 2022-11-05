@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const GET_MATCHING_MOVIES = "GET_MATCHING_MOVIES";
 export const GET_MOVIE_DETAIL = "GET_MOVIE_DETAIL";
 export const FAV_DELETE_MOVIE = "FAV_DELETE_MOVIE";
@@ -7,11 +9,16 @@ export const RESET_MATCHING_MOVIES = "RESET_MATCHING_MOVIES";
 
 export const getMatchingMovies = (search) => {
   return function(dispatch){
-    return fetch(`http://www.omdbapi.com/?s=${search}&page=1&apikey=f2d70180`)
-      .then(response => response.json())
-      .then(data => dispatch({
+    // fetch(`http://www.omdbapi.com/?s=${search}&apikey=f2d70180`)
+    //   .then(response => response.json())
+    //   .then(data => dispatch({
+    //     type: GET_MATCHING_MOVIES,
+    //     payload: data
+    //   }));
+    axios.get(`https://www.omdbapi.com/?s=${search}&apikey=f2d70180`)
+      .then(res => dispatch({
         type: GET_MATCHING_MOVIES,
-        payload: data
+        payload: res.data
       }))
   }
 }
